@@ -6,5 +6,6 @@ class User:
             self.email = data['email']
             self.password = data['password']
             self.type_user = type_user
+            self.id = id
         else:
             raise Exception ('los datos ingresados no son validos para crear el usuario')

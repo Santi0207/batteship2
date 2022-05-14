@@ -6,3 +6,4 @@ class Ship:
             self.id = id
         else:
             raise Exception ("Los atributos no son validos para el barco")
+
