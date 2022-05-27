@@ -8,6 +8,7 @@ app_user = Blueprint("app_user",__name__)
 user_service = UserService()
 
 @jwt_required()
+
 @app_user.route('/user/login', methods=['POST'])
 
 def login():
