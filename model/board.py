@@ -1,15 +1,15 @@
-from model.list_DE import List_DE
-from model.coordinate import Coordinate
+from model.list_de import List_DE
 from model.user import User
 
 class Board:
-    def __init__(self,data, id: int, cols: int, filas: int, player:User, listShip: List_DE, stateTable: bool,
-                 shotsReceiver:Coordinate):
+    def __init__(self, id: int, cols: int, rows: int, player:User, ship_list: List_DE):
         self.id = id
         self.cols = cols
-        self.filas = filas
+        self.rows = rows
         self.player = player
-        self.listShip = listShip
-        self.stateTable = stateTable
-        self.shotsReceiver = data ['coordinate'] #duda como se coloca una lista 
+        self.ship_list = ship_list
+        self.stateBoard = False
+        self.shotsReceiver = []
 
+    def valide_shoot(self,x:int, y:int):
+        pass
