@@ -7,16 +7,14 @@ app_user = Blueprint("app_user",__name__)
 
 user_service = UserService()
 
+
 @jwt_required()
-
 @app_user.route('/user/login', methods=['POST'])
-
 def login():
     try:
-        email = request.json.get('email')
-        password = request.json.get('password')
-        user = user_service.login(email,password)
-        acces_token = create_access_token(identity={'user':user})
+        data = request.json
+        user = user_service.login(data)
+        acces_token = create_access_token(identity={'user':user.email})
         return jsonify({'token':acces_token})
     except Exception as e:
         return jsonify({'message':str(e)})
