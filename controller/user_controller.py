@@ -14,7 +14,7 @@ def login():
     try:
         data = request.json
         user = user_service.login(data)
-        acces_token = create_access_token(identity={'user':user.email})
+        acces_token = create_access_token(identity={'user':user})
         return jsonify({'token':acces_token})
     except Exception as e:
         return jsonify({'message':str(e)})
