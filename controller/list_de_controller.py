@@ -2,7 +2,7 @@ from service.list_de_service import ListDEService
 from flask import json,Response,jsonify,Blueprint,request
 from util.util_encoder import UtilEncoder
 from model.ship import Ship
-#from flask_jwt_extended import create_access_token,jwt_required,get_jwt_identity
+from flask_jwt_extended import create_access_token,jwt_required,get_jwt_identity
 
 app_list_de=Blueprint('app_list_de',__name__)
 

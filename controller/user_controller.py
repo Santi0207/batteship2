@@ -24,5 +24,7 @@ def get_users():
     return Response(status=200,mimetype="application/json",
                     response=json.dumps(user_service.get_users(), cls=UtilEncoder))
 
-#posicionar un barco
-#validar el disparo
+@app_user.route("/game")
+def game():
+    return Response(status=200, mimetype="application/json",
+                    response=json.dumps(user_service.game(), cls=UtilEncoder))
